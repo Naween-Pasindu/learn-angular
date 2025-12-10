@@ -1,2 +1,3 @@
 <p>home works!</p>
-<app-greeting [message] = "'Hello World'"/>
+<app-greeting [message] = "message()"/>
+<input type="text" name="messageInput" id="messageInput" (keyup)="keyUpHandler($event)"/>
