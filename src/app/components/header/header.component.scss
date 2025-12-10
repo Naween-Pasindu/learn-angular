@@ -7,3 +7,26 @@ header{
     align-items: center;
     justify-content: space-between;
 }
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    >span{
+        &:hover{
+            text-decoration: none;
+            cursor: pointer;
+            color: rgb(241, 114, 10);
+        }
+    }
+    ul{
+        list-style: none;
+        li{
+            &:hover{
+                text-decoration: none;
+                cursor: pointer;
+                color: rgb(241, 114, 10);
+            }
+        }
+    }
+}
