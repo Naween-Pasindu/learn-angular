@@ -3,10 +3,11 @@ import { TodosService } from '../services/todos.service';
 import { Todo } from '../model/todo.type';
 import { catchError } from 'rxjs';
 import { NgIf } from '@angular/common';
+import { TodoItemComponentComponent } from '../components/todo-item-component/todo-item-component.component';
 
 @Component({
   selector: 'app-todos',
-  imports: [NgIf],
+  imports: [TodoItemComponentComponent],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.scss'
 })
@@ -28,5 +29,13 @@ export class TodosComponent implements OnInit {
           console.log(todos);
         }
       )
+  }
+  todoToggledHandler(todo: Todo) {
+    this.todoItems.update( (todos) => {
+      return todos.map( t => {
+        if (t.id === todo.id) return{ ...todo, completed: !todo.completed}
+        return t;
+      });
+    });
   }
 }
