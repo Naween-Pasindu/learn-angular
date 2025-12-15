@@ -2,6 +2,10 @@
     No TODO items found.
 </p>
 
+@if(todoItems().length === 0 ){
+    <p>No TODO items found.</p>
+}
+
 @for (todo of todoItems(); track $index){
     <div>
         <input type="checkbox" [checked]="todo.completed" />
