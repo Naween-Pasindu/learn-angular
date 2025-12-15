@@ -1,3 +1,7 @@
+<p +ngIf="todoItems().length === 0">
+    No TODO items found.
+</p>
+
 @for (todo of todoItems(); track $index){
     <div>
         <input type="checkbox" [checked]="todo.completed" />
