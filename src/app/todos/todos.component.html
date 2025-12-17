@@ -8,7 +8,7 @@
 </form>
 
 <ul>
-    @for (todo of todoItems(); track $index){
+    @for (todo of todoItems() | filterTodos:filterText(); track $index){
         <app-todo-item-component [todo]="todo" (todoToggled)="todoToggledHandler(todo)" />
     }
 </ul>

@@ -2,13 +2,13 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { TodosService } from '../services/todos.service';
 import { Todo } from '../model/todo.type';
 import { catchError } from 'rxjs';
-import { NgIf } from '@angular/common';
 import { TodoItemComponentComponent } from '../components/todo-item-component/todo-item-component.component';
 import { FormsModule } from '@angular/forms';
+import { FilterTodosPipe } from '../pipes/filter-todos.pipe';
 
 @Component({
   selector: 'app-todos',
-  imports: [TodoItemComponentComponent, FormsModule],
+  imports: [TodoItemComponentComponent, FormsModule, FilterTodosPipe],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.scss'
 })
