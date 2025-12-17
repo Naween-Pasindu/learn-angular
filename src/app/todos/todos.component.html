@@ -1,6 +1,12 @@
 @if(todoItems().length === 0 ){
     <p>No TODO items found.</p>
 }
+
+<form>
+    <label for="Search">Filter Todos</label>
+    <input name="Search" placeholder="Search todos" [(ngModel)]="filterText" />
+</form>
+
 <ul>
     @for (todo of todoItems(); track $index){
         <app-todo-item-component [todo]="todo" (todoToggled)="todoToggledHandler(todo)" />
